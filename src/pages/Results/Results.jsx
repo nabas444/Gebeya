@@ -24,7 +24,7 @@ function Results() {
   return (
     <Layout>
       <section>
-        <h1 style={{ padding: 30 }}>Results for category: {categoryName}</h1>
+        <h1 style={{ padding: 30 }}>Results for : {categoryName}</h1>
         <p style={{ padding: 30 }}>Category/{categoryName}</p>
         <hr />
 
