@@ -4,8 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { productUrl } from "../../Api/endPoints";
 import ProductCard from "../../components/product/ProductCard";
-import "./Results.module.css";
-
+import classes from "./Results.module.css";
 function Results() {
   const [results, setResults] = React.useState([]);
   const { categoryName } = useParams();
@@ -29,7 +28,7 @@ function Results() {
         <p style={{ padding: 30 }}>Category/{categoryName}</p>
         <hr />
 
-        <div className="product_container">
+        <div className={classes.product_container}>
           {results?.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

@@ -5,6 +5,7 @@ import SignIn from "./pages/Auth/Signup";
 import Payment from "./pages/Payment/Payment";
 import Orders from "./pages/Orders/Orders";
 import Cart from "./pages/Cart/Cart";
+import Results from "./pages/Results/Results"
 function Routing() {
   return (
     <Router>

@@ -3,8 +3,9 @@ import React from "react";
 import Rating from "@mui/material/Rating";
 import CurrencyFormat from "../CurrencyFormat/CurrencyFormat";
 import classes from "./product.module.css";
-function ProductCard({ item }) {
-  const { image, title, id, rating, price } = item;
+function ProductCard({ item, product }) {
+  const data = item || product || {};
+  const { image, title, id, rating = { rate: 0, count: 0 }, price } = data;
   return (
     <div className={`${classes.productCard_container}`}>
       <a href="#">
@@ -13,8 +14,8 @@ function ProductCard({ item }) {
       <div>
         <h3>{title}</h3>
         <div className={classes.rating}>
-          <Rating value={rating.rate} precision={0.5} />
-          <small>{rating.count}</small>
+          <Rating value={rating.rate || 0} precision={0.5} />
+          <small>{rating.count || 0}</small>
         </div>
 
         <div>
