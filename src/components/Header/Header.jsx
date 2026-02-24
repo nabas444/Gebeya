@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import { FiShoppingCart } from "react-icons/fi";
 import { CiLocationOn } from "react-icons/ci";
@@ -6,6 +6,21 @@ import LowerHeader from "./LowerHeader";
 import classes from "./Header.module.css";
 
 function Header() {
+  const [language, setLanguage] = useState("en"); // State for selected language
+
+  // Function to handle language change
+  const handleLanguageChange = (e) => {
+    setLanguage(e.target.value);
+  };
+
+  // Determine flag based on language
+  const flagSrc =
+    language === "en"
+      ? "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
+      : "https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia.svg";
+
+  const flagAlt = language === "en" ? "US Flag" : "Ethiopian Flag";
+
   return (
     <header>
       <div className={classes.headerContainer}>
@@ -49,13 +64,13 @@ function Header() {
         {/* RIGHT */}
         <div className={classes.headerRight}>
           <div className={`${classes.locale} ${classes.hover}`}>
-            <img
-              className={classes.flag}
-              src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
-              alt="US Flag"
-            />
+            <img className={classes.flag} src={flagSrc} alt={flagAlt} />
 
-            <select className={classes.languageSelect}>
+            <select
+              className={classes.languageSelect}
+              value={language}
+              onChange={handleLanguageChange}
+            >
               <option value="en">EN</option>
               <option value="am">AM</option>
             </select>

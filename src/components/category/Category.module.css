@@ -1,0 +1,99 @@
+/* ================= CATEGORY CONTAINER ================= */
+
+.categoryContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  padding: 0 20px 40px 20px;
+
+  position: relative;
+  margin-top: -10px;   /* reduced overlap */
+  z-index: 3;
+}
+
+/* ================= CARD ================= */
+
+.categoryCard {
+  background-color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* LINK */
+
+.cardLink {
+  text-decoration: none;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* TITLE */
+
+.cardTitle {
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* IMAGE WRAPPER */
+
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+}
+
+/* SHOP NOW */
+
+.shopNow {
+  margin-top: 15px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #007185;
+}
+
+.shopNow:hover {
+  text-decoration: underline;
+  color: #c7511f;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .categoryContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .categoryContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .categoryContainer {
+    grid-template-columns: 1fr;
+    margin-top: -150px;
+  }
+}
