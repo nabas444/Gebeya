@@ -16,6 +16,7 @@
   margin: 100px auto;
   gap: 50px;
   justify-content: center; /* Center cards by default */
+  padding: 0 20px 40px 55px;
 }
 
 .productCard_container {
@@ -27,7 +28,9 @@
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .productCard_container:hover {
@@ -61,7 +64,9 @@
 /* Button */
 .button {
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   cursor: pointer;
   background-color: var(--primary-color);
   color: white;

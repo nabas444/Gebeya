@@ -4,16 +4,15 @@ import { FiShoppingCart } from "react-icons/fi";
 import { CiLocationOn } from "react-icons/ci";
 import LowerHeader from "./LowerHeader";
 import classes from "./Header.module.css";
+import { Link } from "react-router-dom";
 
 function Header() {
-  const [language, setLanguage] = useState("en"); // State for selected language
+  const [language, setLanguage] = useState("en");
 
-  // Function to handle language change
   const handleLanguageChange = (e) => {
     setLanguage(e.target.value);
   };
 
-  // Determine flag based on language
   const flagSrc =
     language === "en"
       ? "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
@@ -26,12 +25,9 @@ function Header() {
       <div className={classes.headerContainer}>
         {/* LEFT */}
         <div className={classes.headerLeft}>
-          <a href="/" className={`${classes.logo} ${classes.hover}`}>
-            <img
-              src="https://pngimg.com/uploads/amazon/amazon_PNG25.png"
-              alt="Amazon Logo"
-            />
-          </a>
+          <Link to="/" className={`${classes.logo} ${classes.hover}`}>
+            <img src="/gebeyacom.png" alt="Gebeya Logo" />
+          </Link>
 
           <div className={`${classes.delivery} ${classes.hover}`}>
             <CiLocationOn className={classes.locationIcon} />
@@ -76,23 +72,23 @@ function Header() {
             </select>
           </div>
 
-          <a href="/signin" className={`${classes.navItem} ${classes.hover}`}>
+          <Link to="/auth" className={`${classes.navItem} ${classes.hover}`}>
             <p>Hello, Sign in</p>
             <span>Account & Lists</span>
-          </a>
+          </Link>
 
-          <a href="/orders" className={`${classes.navItem} ${classes.hover}`}>
+          <Link to="/Orders" className={`${classes.navItem} ${classes.hover}`}>
             <p>Returns</p>
             <span>& Orders</span>
-          </a>
+          </Link>
 
-          <a href="/cart" className={`${classes.cart} ${classes.hover}`}>
+          <Link to="/Cart" className={`${classes.cart} ${classes.hover}`}>
             <div className={classes.cartIconWrapper}>
               <FiShoppingCart />
               <span className={classes.cartCount}>0</span>
             </div>
             <span className={classes.cartText}>Cart</span>
-          </a>
+          </Link>
         </div>
       </div>
 

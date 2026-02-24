@@ -1,0 +1,198 @@
+.gebeya-footer {
+  background-color: #232f3e;
+  color: #ddd;
+  font-size: 12px;
+  margin-top: 40px;
+}
+
+.gebeya-footer a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.gebeya-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Back to top */
+
+.gebeya-footer__back-to-top {
+  background-color: #37475a;
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.gebeya-footer__back-to-top:hover {
+  background-color: #485769;
+}
+
+/* Top 4 columns */
+
+.gebeya-footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 10%;
+  border-bottom: 1px solid #3a4553;
+}
+
+.gebeya-footer__column {
+  flex: 1 1 160px;
+  margin: 0 20px 20px;
+  min-width: 150px;
+}
+
+.gebeya-footer__column h3 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.gebeya-footer__column a {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Middle row: logo + selectors */
+
+.gebeya-footer__middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 10%;
+  border-bottom: 1px solid #3a4553;
+}
+
+.gebeya-footer__logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff9900;
+  font-family: Arial, sans-serif;
+}
+
+.gebeya-footer__selectors {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.gebeya-footer__selector {
+  background: #232f3e;
+  color: #ddd;
+  border: 1px solid #848688;
+  border-radius: 3px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.gebeya-footer__selector:hover {
+  border-color: #ffffff;
+}
+
+/* Services grid */
+
+.gebeya-footer__services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px 8% 20px;
+  background-color: #131a22;
+}
+
+.gebeya-footer__service-column {
+  flex: 1 1 180px;
+  margin: 10px 15px;
+  min-width: 160px;
+}
+
+.gebeya-footer__service-column a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.gebeya-footer__service-title {
+  display: block;
+  color: #ddd;
+  font-weight: 600;
+}
+
+.gebeya-footer__service-desc {
+  display: block;
+  color: #999;
+  font-size: 11px;
+}
+
+/* Bottom row */
+
+.gebeya-footer__bottom {
+  background-color: #131a22;
+  padding: 15px 5% 25px;
+  text-align: center;
+  color: #999;
+  font-size: 11px;
+}
+
+.gebeya-footer__bottom-links {
+  margin-bottom: 5px;
+}
+
+.gebeya-footer__bottom-links a {
+  margin: 0 8px;
+}
+
+/* Responsive tweaks */
+
+@media (max-width: 768px) {
+  .gebeya-footer__top {
+    padding: 30px 5%;
+  }
+
+  .gebeya-footer__middle {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .gebeya-footer__services {
+    padding: 20px 5% 15px;
+  }
+}
+/* Country selector with flag */
+
+.gebeya-footer__country {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gebeya-footer__flag {
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
+}
+/* Language selector styling like Amazon */
+
+.gebeya-footer__language {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gebeya-footer__dropdown-icon {
+  font-size: 10px;
+  margin-left: 4px;
+  opacity: 0.8;
+}
+
+.gebeya-footer__language:hover .gebeya-footer__dropdown-icon {
+  opacity: 1;
+}
+.gebeya-footer__globe {
+  display: flex;
+  align-items: center;
+  color: #ddd; 
+}
