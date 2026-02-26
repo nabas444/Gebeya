@@ -30,6 +30,8 @@ function ProductDetail() {
       
       product={product} 
       flex={true}
+      renderAdd={true}
+
 
       renderDesc={true}
       />}
