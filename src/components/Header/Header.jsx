@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import { FiShoppingCart } from "react-icons/fi";
 import { CiLocationOn } from "react-icons/ci";
 import LowerHeader from "./LowerHeader";
 import classes from "./Header.module.css";
 import { Link } from "react-router-dom";
-
+import { DataContext } from "../DataProvider/DataProvider";
 function Header() {
   const [language, setLanguage] = useState("en");
 
@@ -19,10 +19,11 @@ function Header() {
       : "https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia.svg";
 
   const flagAlt = language === "en" ? "US Flag" : "Ethiopian Flag";
-
+const [{basket}, dispatch] = useContext(DataContext);
+console.log(basket.length);
   return (
-    <header>
-      <div className={classes.headerContainer}>
+    <section className={classes.fixed}>
+      <div className={classes.sectionContainer}>
         {/* LEFT */}
         <div className={classes.headerLeft}>
           <Link to="/" className={`${classes.logo} ${classes.hover}`}>
@@ -85,7 +86,7 @@ function Header() {
           <Link to="/Cart" className={`${classes.cart} ${classes.hover}`}>
             <div className={classes.cartIconWrapper}>
               <FiShoppingCart />
-              <span className={classes.cartCount}>0</span>
+              <span className={classes.cartCount}>{basket.length}</span>
             </div>
             <span className={classes.cartText}>Cart</span>
           </Link>
@@ -93,7 +94,7 @@ function Header() {
       </div>
 
       <LowerHeader />
-    </header>
+    </section>
   );
 }
 

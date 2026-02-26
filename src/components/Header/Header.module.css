@@ -14,7 +14,7 @@
 
 /* ================= TOP HEADER ================= */
 
-.headerContainer {
+.sectionContainer {
   background: var(--main-dark);
   color: white;
   display: flex;
@@ -24,7 +24,13 @@
   height: 60px;
   font-family: var(--font);
 }
-
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
 /* LEFT */
 
 .headerLeft {

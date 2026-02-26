@@ -1,23 +1,18 @@
-import {Type} from './action.type'
-export const reducer={state,action}=>{
-backet:[]
-}
-export const reducer=(state,action)={
-switch(action.type) {
-    case Type.ADD_TO_BASKET:
-        return( ...state,
-            basket:[...state.basket,action.item])
+import { Type } from './Action.type';
 
-           
-        
-        
-        break;
+export const initialState = {
+  basket: [],
+};
+
+export const reducer = (state, action) => {
+  switch (action.type) {
+    case Type.ADD_TO_BASKET:
+      return {
+        ...state,
+        basket: [...state.basket, action.item],
+      };
 
     default:
-
-        return state
-        
-}
-}
-
-const [state,dispatch]=useReducer(reducer,initialState)
+      return state;
+  }
+};
