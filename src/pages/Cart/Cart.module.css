@@ -1,0 +1,90 @@
+/* ===== PAGE BACKGROUND ===== */
+.cartSection {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #eaeded; /* Amazon light gray */
+  min-height: 100vh;
+  margin-top: 80px; /* adjust if you have fixed header */
+  align-items: flex-start;
+}
+
+/* ===== LEFT SIDE (ITEMS) ===== */
+.cartItems {
+  flex: 0.75;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.cartItems h2 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.cartItems h3 {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #565959;
+}
+
+.cartItems p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #0f1111;
+}
+
+.cartItems hr {
+  margin: 15px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* ===== RIGHT SIDE (SUBTOTAL CARD) ===== */
+.cartSection > div:last-child {
+  flex: 0.25;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Subtotal row */
+.cartSection > div:last-child > div {
+  font-size: 18px;
+}
+
+.cartSection > div:last-child p {
+  margin-bottom: 5px;
+}
+
+.cartSection > div:last-child span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+/* ===== CHECKOUT BUTTON ===== */
+.cartSection > div:last-child a {
+  text-align: center;
+  text-decoration: none;
+  background-color: #ffd814;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  border: 1px solid #fcd200;
+  transition: background-color 0.2s ease;
+}
+
+.cartSection > div:last-child a:hover {
+  background-color: #f7ca00;
+}

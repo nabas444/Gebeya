@@ -5,6 +5,7 @@ import { DataContext } from "../../components/DataProvider/DataProvider";
 import { useContext } from "react";
 import ProductCard from '../../components/product/ProductCard';
 function Cart() {
+  const [{ basket }] = useContext(DataContext);
   return (
     <Layout>
       <section className={classes.cartSection}>
@@ -28,7 +29,17 @@ function Cart() {
           )} 
         
         </div>
-        <div className={classes.cartSummary}></div>
+        {
+          basket?.length !==0&&(
+            <div>
+<div>
+  <p>Subtotal ({basket?.length} items):</p>
+</div>
+              </div>
+          
+        
+       ) }
+        
       </section>
     </Layout>
   )
