@@ -197,3 +197,48 @@
 .continueShoppingBtn:active {
   transform: scale(0.97);
 }
+
+/* ===== QUANTITY CONTROLS ===== */
+.cartItemRow {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.qtyControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 6px;
+}
+
+.qtyButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #d5d9d9;
+  background-color: #f0f2f2;
+  color: #111;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qtyButton:hover {
+ background-color: #e7e9ec;
+  border-color: #adb1b8;
+}
+
+.qtyButton:active {
+  transform: scale(0.97);
+}
+
+.qtyValue {
+  min-width: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #0f1111;
+}

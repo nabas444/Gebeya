@@ -5,6 +5,7 @@ import { DataContext } from "../../components/DataProvider/DataProvider";
 import ProductCard from "../../components/product/ProductCard";
 import CurrencyFormat from "../../components/CurrencyFormat/CurrencyFormat";
 import { Link, useLocation } from "react-router-dom";
+import { Type } from "../../utility/Action.type";
 
 function Cart() {
   const [{ basket, user }, dispatch] = useContext(DataContext);
@@ -13,9 +14,17 @@ function Cart() {
   // Where user came from (fallback to home)
   const from = location.state?.from || "/";
 
-  const total = basket.reduce((amount, item) => {
-    return item.price + amount;
-  }, 0);
+  // Total price
+  const total = basket.reduce((sum, item) => sum + item.price * item.amount, 0);
+  // Total items
+  const totalItems = basket.reduce((sum, item) => sum + item.amount, 0);
+  const handleIncrement = (id) => {
+    dispatch({ type: Type.INCREMENT_ITEM, id });
+  };
+
+  const handleDecrement = (id) => {
+    dispatch({ type: Type.DECREMENT_ITEM, id });
+  };
 
   return (
     <Layout>
@@ -47,14 +56,32 @@ function Cart() {
               </div>
 
               {/* Cart Items */}
-              {basket.map((item, i) => (
-                <ProductCard
-                  key={i}
-                  product={item}
-                  renderDesc={true}
-                  renderAdd={false}
-                  flex={true}
-                />
+              {basket.map((item) => (
+                <div key={item.id} className={classes.cartItemRow}>
+                  <ProductCard
+                    product={item}
+                    renderDesc={true}
+                    renderAdd={true} // show Add to Cart button
+                    flex={true}
+                  />
+                  <div className={classes.qtyControls}>
+                    <button
+                      className={classes.qtyButton}
+                      onClick={() => handleDecrement(item.id)}
+                      aria-label={`Decrease quantity of ${item.title}`}
+                    >
+                      -
+                    </button>
+                    <span className={classes.qtyValue}>{item.amount}</span>
+                    <button
+                      className={classes.qtyButton}
+                      onClick={() => handleIncrement(item.id)}
+                      aria-label={`Increase quantity of ${item.title}`}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
               ))}
             </>
           )}
@@ -64,10 +91,8 @@ function Cart() {
         {basket?.length > 0 && (
           <div className={classes.subtotalCard}>
             <div>
-              <p>
-                Subtotal ({basket.length} items)
-              </p>
-              <CurrencyFormat amount={total} />
+              <p>Subtotal ({totalItems} items)</p>
+              <CurrencyFormat amount={total} currency="USD" />
             </div>
 
             <span>

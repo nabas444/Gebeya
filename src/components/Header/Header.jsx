@@ -20,7 +20,7 @@ function Header() {
 
   const flagAlt = language === "en" ? "US Flag" : "Ethiopian Flag";
 const [{basket}, dispatch] = useContext(DataContext);
-console.log(basket.length);
+const totalItems = basket.reduce((sum, item) => sum + (item.amount || 0), 0);
   return (
     <section className={classes.fixed}>
       <div className={classes.sectionContainer}>
@@ -86,7 +86,7 @@ console.log(basket.length);
           <Link to="/Cart" className={`${classes.cart} ${classes.hover}`}>
             <div className={classes.cartIconWrapper}>
               <FiShoppingCart />
-              <span className={classes.cartCount}>{basket.length}</span>
+              <span className={classes.cartCount}>{totalItems}</span>
             </div>
             <span className={classes.cartText}>Cart</span>
           </Link>
