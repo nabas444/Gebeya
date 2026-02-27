@@ -18,13 +18,19 @@ function Cart() {
         <div className={classes.cartItems}>
           <h2>Shopping Cart</h2>
 
-          <h3>Your Cart is Empty</h3>
           <hr />
-          {basket?.length == 0 ? (
-            <p>
-              You have no items in your cart. <br /> To buy one or more items,
-              click "Add to Cart" next to the item.
-            </p>
+          {basket?.length === 0 ? (
+            <div className={classes.emptyCart}>
+              <h3>Your Cart is Empty</h3>
+              <p>
+                You have no items in your cart. <br />
+                Browse our products and find something you love.
+              </p>
+
+              <Link to="/" className={classes.backToShopBtn}>
+                ← Back to Shop
+              </Link>
+            </div>
           ) : (
             basket?.map((item, i) => {
               return (
