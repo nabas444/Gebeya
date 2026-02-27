@@ -111,15 +111,46 @@
     width: 90%; /* Slightly smaller cards for mobile */
   }
 }
-.product_flexed{
+/* .product_flexed{
   box-shadow: none;
   height: auto;
   display: flex;
   gap: 50px;
   width: 100%;
-}
+} */
 .product_flexed .h3{
   padding: 20px 0px;
+}
+.product_flexed {
+  box-shadow: none;
+  display: flex;
+  gap: 60px;
+  width: 100%;
+  align-items: flex-start;
+  padding: 40px 60px;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+/* Image */
+.product_flexed img {
+  width: 400px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Text container inside ProductCard */
+.product_flexed > div {
+  flex: 1;
+  min-width: 0; /* VERY IMPORTANT — prevents overflow cut */
+}
+
+/* Button in detail page */
+.product_flexed .button {
+  display: inline-block;
+  position: static;
+  width: 200px;
+  margin-top: 20px;
 }
 .product_flexed .button{
 display: block;
@@ -129,10 +160,10 @@ width: 150px;
 margin-right:40px;
 }
 
-.product_flexed img{
+/* .product_flexed img{
   width: 300px !important;
   height:auto;
-}
+} */
 
 @media screen and (max-width: 768px) {
   .product_flexed {
