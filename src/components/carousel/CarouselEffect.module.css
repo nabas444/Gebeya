@@ -5,6 +5,7 @@
   overflow: hidden;
   left: 50%;
   margin-left: -50vw; /* full-width break out */
+  margin-top: 100px; /* offset fixed header + lower header */
 }
 
 /* Remove react-carousel fixed heights */
