@@ -48,7 +48,7 @@ const totalItems = basket.reduce((sum, item) => sum + (item.amount || 0), 0);
 
             <input
               type="text"
-              placeholder="Search Amazon"
+              placeholder="Search Gebeya.com"
               className={classes.searchInput}
             />
 
